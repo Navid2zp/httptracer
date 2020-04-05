@@ -10,7 +10,7 @@ go get -u github.com/Navid2zp/httptracer
 
 ### Example
 
-```
+```go
 result, err := Tracer("https://google.com", "GET")
 
 fmt.Println("Error: ", err)
@@ -27,7 +27,7 @@ fmt.Println("Body Size (byte): ", result.BodySize)
 
 You can convert results to JSON or XML easier using these methods.
 
-```
+```go
 // Returns json encoded bytes
 jsonData, _ := result.ToJSON()
 fmt.Println(string(jsonData))
