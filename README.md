@@ -11,7 +11,7 @@ go get -u github.com/Navid2zp/httptracer
 ### Example
 
 ```go
-result, err := Tracer("https://google.com", "GET")
+result, err := httptracer.Tracer("https://google.com", "GET")
 
 fmt.Println("Error: ", err)
 
