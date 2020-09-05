@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-func Tracer(url, method string) (*TracerResult, error) {
+func Trace(url, method string) (*TracerResult, error) {
 	req, _ := http.NewRequest(strings.ToUpper(method), url, nil)
 
 	var startTime, connectStartTime, nameLookupStartTime, tlsHandshakeStartTime time.Time
@@ -51,6 +51,10 @@ func Tracer(url, method string) (*TracerResult, error) {
 	httpStatData.BodySize = binary.Size(bodyBytes)
 
 	return &httpStatData, nil
+}
+
+func Tracer(url, method string) (*TracerResult, error) {
+	return Trace(url, method)
 }
 
 func (d *TracerResult) ToJSON() ([]byte, error) {
